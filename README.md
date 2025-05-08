@@ -1,17 +1,17 @@
 # Understanding TypeScript: Enums, any, unknown, and never
 
-This blog helps beginners understand two important topics in TypeScript:
+This blog helps understand two important topics in TypeScript:
 - How enums work
 - The difference between `any`, `unknown`, and `never` types
 
 ---
 
-## ✅ What is an `enum` in TypeScript?
+## What is an `enum` in TypeScript?
 
-An `enum` is a list of fixed values. You use it when you want to give **names** to a group of related values.
+An `enum` is a list of fixed values. we use it when we want to give **names** to a group of related values.
 
 ### 🔸 Why use enums?
-- To make your code **easy to read**
+- To make our code **easy to read**
 - To **avoid mistakes**
 - To group values together
 
@@ -46,39 +46,39 @@ console.log(result);           // "SUCCESS"
 
 ---
 
-## ✅ Difference between `any`, `unknown`, and `never`
+## Difference between `any`, `unknown`, and `never`
 
-These are special types in TypeScript that help you write better and safer code.
+These are special types in TypeScript that help us write better and safer code.
 
-### 🔹 `any` — Anything is allowed
+### `any` — Anything is allowed
 
 ```ts
 let value: any = "hello";
 value = 123;
-value.toUpperCase();  // ✅ No error
+value.toUpperCase();  // No error
 ```
 
-- TypeScript lets you do anything
-- ❌ Not safe — no type checking
+- TypeScript lets us do anything
+- Not safe — no type checking
 
 ---
 
-### 🔹 `unknown` — Anything is allowed, but type must be checked
+### `unknown` — Anything is allowed, but type must be checked
 
 ```ts
 let value: unknown = "hello";
 
 if (typeof value === "string") {
-  console.log(value.toUpperCase());  // ✅ Safe
+  console.log(value.toUpperCase());  // Safe
 }
 ```
 
-- ✅ Safer than `any`
-- You must **check the type** before using
+- Safer than `any`
+- We must **check the type** before using
 
 ---
 
-### 🔹 `never` — No value is returned
+### `never` — No value is returned
 
 ```ts
 function throwError(): never {
@@ -88,17 +88,3 @@ function throwError(): never {
 
 - Use when a function **never finishes**
 - For example, errors or infinite loops
-
----
-
-### 🧠 Summary Table:
-
-| Type     | Can hold any value? | Safe to use? | When to use?                     |
-|----------|---------------------|--------------|----------------------------------|
-| `any`    | ✅ Yes              | ❌ No        | When you don’t care about type   |
-| `unknown`| ✅ Yes              | ✅ Yes       | When you want safety + flexibility |
-| `never`  | ❌ No value         | ✅ Yes       | For errors or infinite loops     |
-
----
-
-Hope this helps you understand enums and special types in TypeScript! 💡
