@@ -1,4 +1,4 @@
-function formatSrtring(input: string, toUpper?: boolean): string {
+function formatString(input: string, toUpper?: boolean): string {
     return toUpper ? input.toUpperCase() : input.toLowerCase();
 }
 
@@ -10,7 +10,7 @@ function filterByRating(items: { title: string; rating: number }[]): { title: st
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
-  }
+}
 
 
 class Vehicle {
@@ -22,7 +22,7 @@ class Vehicle {
     this.year = year;
   }
 
-  public getInfor(): string {
+  public getInfo(): string {
     return `Make: ${this.make}, Year: ${this.year}`;
   }
 }
